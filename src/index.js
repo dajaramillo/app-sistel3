@@ -2,14 +2,13 @@ const express = require('express')
 
 //configuraciones
 const app = express()
-const port = 3000
+app.set('port', process.env.PORT || 3000);
+
 
 //rutas
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(require('./routes/index'));
 
 //Servidor
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.listen(app.get('port'), () => {
+  console.log(`Example app listening on port`, app.get('port'))
+});
