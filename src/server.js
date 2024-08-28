@@ -11,8 +11,7 @@ app.engine('.hbs', exphbs.engine({
   defaultLayout: 'main', //propiedades de handlerbars //crear carpeta views/layouts/main.hbs
   layoutsDir: path.join(app.get('views'),'layouts'),
   partialsDir: path.join(app.get('views'),'partials'), //partes como formulario
-  handlebars: allowInsecurePrototypeAccess(Handlebars),
-  extname: '.hbs' //extensión de los archivos
+   extname: '.hbs' //extensión de los archivos
 }));
 app.set('view engine', '.hbs'); //motor de vistas en hbs
 
